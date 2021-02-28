@@ -1,17 +1,16 @@
 In this project you will create a parent class named Media with three subclasses: Book, Movie, and CD. These three subclasses have the following properties and methods:
 
 Book
-
 Properties: author (string), title (string), pages (number), isCheckedOut (boolean, initially false), and ratings (array, initially empty).
 Getters: all properties have a getter
 Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
-Movie
 
+Movie
 Properties: director (string), title (string), runTime (number), isCheckedOut (boolean, initially false), and ratings (array, initially empty)
 Getters: all properties have a getter
 Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
-CD
 
+CD
 Properties: artist (string), title (string), isCheckedOut (boolean, initially false), and ratings (array, initially empty), songs (array of strings)
 Getters: all properties have a getter
 Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
@@ -29,4 +28,9 @@ Common properties for Media parent class:
 			- addRating()
 			
 Computing average rating: sum all the values, divide by length. :)
+
+The Codecademy solution for the average rating is to use a reducer, but it 
+was just as easy for me to do this with a forEach() command as well.
+
+I will rewrite it with a reducer function for practice as well.
 		
