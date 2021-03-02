@@ -17,15 +17,17 @@ class Media {
 		return this._ratings;
 	}
 
-	averageRating() {
+	getAverageRating() {
 		let ratingLength = this._ratings.length;
 		let ratingTotal = 0;
 		let averageRating;
+		const sumRating = (total, current) => total + current;
 
 		if(ratingLength === 0) {
-			return 0;
+			return ratingTotal;
 		} else {
-			this._ratings.forEach(value => ratingTotal += value);
+			//this._ratings.forEach(value => ratingTotal += value);
+			ratingTotal = this._ratings.reduce(sumRating);
 
 			averageRating = (ratingTotal/ratingLength).toFixed(2);
 			
@@ -38,7 +40,11 @@ class Media {
 	}
 
 	addRating(newRating) {
-		this._ratings.push(newRating);
+		if (newRating >= 1 && newRating <= 5) {
+			this._ratings.push(newRating);
+		} else {
+			console.log(`'${newRating}' is not a valid value. Please specify a value between 1 and 5.`)
+		}
 	}
 }
 
@@ -47,6 +53,7 @@ class Book extends Media {
 		super(title);
 		this._author = author;
 		this._pages = pages;
+		this._publisher;
 	}
 
 	get author() {
@@ -56,6 +63,14 @@ class Book extends Media {
 	get pages() {
 		return this._pages;
 	}
+
+	get publisher() {
+		return this._publisher;
+	}
+
+	setPublisher(newPublisher) {
+		this._publisher = newPublisher;
+	}
 }
 
 class Movie extends Media {
@@ -63,6 +78,7 @@ class Movie extends Media {
 		super(title);
 		this._director = director;
 		this._runTime = runTime;
+		this._movieCast = [];
 	}
 
 	get director() {
@@ -72,15 +88,41 @@ class Movie extends Media {
 	get runTime() {
 		return this._runTime;
 	}
+
+	get movieCast() {
+		return this._movieCast;
+	}
+
+	addCastMember(newCastMember) {
+		this._movieCast.push(newCastMember);
+	}
 }
 
 class CD extends Media {
 	constructor (artist, title) {
 		super(title);
 		this._artist = artist;
+		this._songTitles = [];
 	}
 
 	get artist() {
 		return this._artist;
+	}
+
+	get songTitles() {
+		return this._songTitles;
+	}
+
+	addSong(newSong) {
+		this._songTitles.push(newSong);
+	}
+
+	shuffle() {
+		let numSongs = this._songTitles.length;
+		let playlist = [];
+
+		//todo: the actual random sort
+
+		return playlist;
 	}
 }

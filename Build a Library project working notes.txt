@@ -33,4 +33,14 @@ The Codecademy solution for the average rating is to use a reducer, but it
 was just as easy for me to do this with a forEach() command as well.
 
 I will rewrite it with a reducer function for practice as well.
+
+==========
+Challenge activities:
+"If you would like to continue working on this project, we have listed some avenues to build on your existing progress.
+
+	- Add more properties to each class (movieCast, songTitles, etc.)
+	- Create a CD class that extends Media. (did already as part of the initiala implementation)
+	- In .addRating(), make sure input is between 1 and 5.
+	- Create a method called shuffle for the CD class. The method returns a randomly sorted array of all the songs in the songs property.
+	- Create class called Catalog that holds all of the Media items in our library."
 		
