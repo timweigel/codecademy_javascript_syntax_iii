@@ -55,6 +55,7 @@ historyOfEverything.addRating(4);
 historyOfEverything.addRating(5);
 historyOfEverything.addRating(5);
 console.log(historyOfEverything.getAverageRating());
+historyOfEverything.setPublisher('MacMillan');
 
 Movie:
 const speed = new Movie('Jan de Bont', 'Speed', 116);
@@ -64,3 +65,9 @@ speed.addRating(1);
 speed.addRating(1);
 speed.addRating(5);
 console.log(speed.getAverageRating());
+speed.addCastMember('Sandra Bullock');
+speed.addCastMember('Keanu Reeves');
+console.log(speed.movieCast);
+
+CD:
+const bonJersey = new CD('Jon BonJersey', 'BonJersey');

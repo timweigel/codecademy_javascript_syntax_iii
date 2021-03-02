@@ -122,6 +122,15 @@ class CD extends Media {
 		let playlist = [];
 
 		//todo: the actual random sort
+		do {
+			/*
+				- Get a random number between 0 and numSongs
+				- If this._songTitles[random number] isn't in playlist
+					- push this._songTitles[random number] into playlist
+				- Lather, rinse, repeat until the playlist is full
+			*/
+
+		} while (playlist.length != numSongs);
 
 		return playlist;
 	}
