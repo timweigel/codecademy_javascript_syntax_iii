@@ -1,0 +1,94 @@
+In this project you will create a parent class named Media with three subclasses: Book, Movie, and CD. These three subclasses have the following properties and methods:
+
+Book
+Properties: author (string), title (string), pages (number), isCheckedOut (boolean, initially false), and ratings (array, initially empty).
+Getters: all properties have a getter
+Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+
+Movie
+Properties: director (string), title (string), runTime (number), isCheckedOut (boolean, initially false), and ratings (array, initially empty)
+Getters: all properties have a getter
+Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+
+CD
+Properties: artist (string), title (string), isCheckedOut (boolean, initially false), and ratings (array, initially empty), songs (array of strings)
+Getters: all properties have a getter
+Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+
+==========
+Common properties for Media parent class:
+	- All subclasses have:
+		- Properties:
+			- title
+			- isCheckedOut
+			- ratings
+		- Methods:
+			- getAverageRating()
+			- toggleCheckOutStatus()
+			- addRating()
+			
+Computing average rating: sum all the values, divide by length. :)
+
+The Codecademy solution for the average rating is to use a reducer, but it 
+was just as easy for me to do this with a forEach() command as well.
+
+I will rewrite it with a reducer function for practice as well. (done)
+
+==========
+Challenge activities:
+"If you would like to continue working on this project, we have listed some avenues to build on your existing progress.
+
+	- Add more properties to each class (movieCast, songTitles, etc.) (done)
+	- Create a CD class that extends Media. (did already as part of the initial implementation)
+	- In .addRating(), make sure input is between 1 and 5. (done)
+	- Create a method called shuffle for the CD class. The method returns a randomly sorted array of all the songs in the songs property. (done)
+	- Create class called Catalog that holds all of the Media items in our library. (in progress)"
+
+==========
+Tests:
+
+Book:
+const historyOfEverything = new Book('Bill Bryson', 'A Short History of Everything', 544);
+historyOfEverything.toggleCheckoutStatus();
+console.log(historyOfEverything.isCheckedOut);
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(5);
+console.log(historyOfEverything.getAverageRating());
+historyOfEverything.setPublisher('MacMillan');
+
+Movie:
+const speed = new Movie('Jan de Bont', 'Speed', 116);
+speed.toggleCheckoutStatus();
+console.log(speed.isCheckedOut);
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+console.log(speed.getAverageRating());
+speed.addCastMember('Sandra Bullock');
+speed.addCastMember('Keanu Reeves');
+console.log(speed.movieCast);
+
+CD:
+const bonJersey = new CD('Jon BonJersey', 'BonJersey');
+bonJersey.addSong('Livin on a Prayer');
+bonJersey.addSong('Wish');
+bonJersey.addSong('I');
+bonJersey.addSong('could');
+bonJersey.addSong('remember');
+bonJersey.addSong('more');
+bonJersey.addSong('Bon Jovi');
+bonJersey.addSong('song');
+bonJersey.addSong('titles');
+console.log(bonJersey.songTitles);
+console.log(bonJersey.shuffle());
+
+Catalog:
+const testCatalog = new Catalog('myCat');
+console.log(testCatalog);
+testCatalog.addBook('Bill Bryson', 'A Short History of Everything', 544);
+testCatalog.addBook('Bill Bryson', 'A Short History of Everything 2: Everything-er', 545);
+testCatalog.contents[0].addRating(1);
+testCatalog.contents[0].getAverageRating();
+testCatalog.contents[1].toggleCheckoutStatus();
+console.log(testCatalog);
