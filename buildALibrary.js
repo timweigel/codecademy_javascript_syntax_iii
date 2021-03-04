@@ -140,14 +140,42 @@ class CD extends Media {
 				playlist.push(randSong)
 			}
 
-		} while (playlist.length < numSongs); // use < instead? Try it!
+		} while (playlist.length < numSongs); // use < instead of !=? Try it!
 
 		return playlist;
 	}
 }
 
+/*
+	This is SUPER-primitive, but it WORKS and I'm thrilled.
+*/
+
 class Catalog {
-	constructor(type, name) {
-		
+	constructor(name) {
+		this._name = name;
+		this._contents = [];
+	}
+
+	get name() {
+		return this._name;
+	}
+
+	get contents() {
+		return this._contents;
+	}
+
+	addBook(author, title, pages) {
+		const newBook = new Book(author, title, pages);
+		this._contents.push(newBook);
+	}
+
+	addMovie(director, title, runTime) {
+		const newMovie = new Movie(director, title, runTime);
+		this._contents.push(newMovie);
+	}
+
+	addCD(artist, title) {
+		const newCD = new CD(artist, title);
+		this._contents.push(newCD);
 	}
 }

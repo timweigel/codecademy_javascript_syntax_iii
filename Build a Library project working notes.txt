@@ -32,7 +32,7 @@ Computing average rating: sum all the values, divide by length. :)
 The Codecademy solution for the average rating is to use a reducer, but it 
 was just as easy for me to do this with a forEach() command as well.
 
-I will rewrite it with a reducer function for practice as well.
+I will rewrite it with a reducer function for practice as well. (done)
 
 ==========
 Challenge activities:
@@ -82,3 +82,13 @@ bonJersey.addSong('song');
 bonJersey.addSong('titles');
 console.log(bonJersey.songTitles);
 console.log(bonJersey.shuffle());
+
+Catalog:
+const testCatalog = new Catalog('myCat');
+console.log(testCatalog);
+testCatalog.addBook('Bill Bryson', 'A Short History of Everything', 544);
+testCatalog.addBook('Bill Bryson', 'A Short History of Everything 2: Everything-er', 545);
+testCatalog.contents[0].addRating(1);
+testCatalog.contents[0].getAverageRating();
+testCatalog.contents[1].toggleCheckoutStatus();
+console.log(testCatalog);
