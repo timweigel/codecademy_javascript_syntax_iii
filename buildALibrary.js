@@ -119,9 +119,11 @@ class CD extends Media {
 
 	shuffle() {
 		let numSongs = this._songTitles.length;
+		let randNum;
+		let randSong;
 		let playlist = [];
 
-		//todo: the actual random sort
+		//todo: the actual random sort - done!
 		do {
 			/*
 				- Get a random number between 0 and numSongs
@@ -130,8 +132,22 @@ class CD extends Media {
 				- Lather, rinse, repeat until the playlist is full
 			*/
 
-		} while (playlist.length != numSongs);
+			// This is 100% for readability.
+			randNum = Math.floor(Math.random() * numSongs);
+			randSong = this._songTitles[randNum];
+
+			if (!playlist.includes(randSong)) {
+				playlist.push(randSong)
+			}
+
+		} while (playlist.length < numSongs); // use < instead? Try it!
 
 		return playlist;
+	}
+}
+
+class Catalog {
+	constructor(type, name) {
+		
 	}
 }
