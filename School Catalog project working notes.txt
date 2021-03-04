@@ -1,0 +1,24 @@
+In this project I'll create a parent class School with three child classes. The parent and child classes will have the following properties, getters, setters, and methods:
+	- School
+		- Properties: 
+			- name (string)
+			- level (one of three strings: 'primary', 'middle', or 'high')
+			- numberOfStudents (number)
+		- Getters: all properties have getters
+		- Setters: the numberOfStudents property has a setter
+		- Methods: 
+			- .quickFacts() 
+			- .pickSubstituteTeacher() (this is a static method)
+
+	- Primary
+		- Includes everything in the School class, plus one additional property
+		- Properties: 
+			- pickupPolicy (string)
+
+	- Middle
+		- Does not include any additional properties or methods
+
+	- High
+		- Includes everything in the School class, plus one additional property
+		- Properties: 
+			- sportsTeams (array of strings)
