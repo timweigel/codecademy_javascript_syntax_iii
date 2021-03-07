@@ -48,7 +48,7 @@ class PrimarySchool extends School {
 	}
 
 	get pickupPolicy() {
-		returns 
+		console.log(this._pickupPolicy); 
 	}
 }
 
